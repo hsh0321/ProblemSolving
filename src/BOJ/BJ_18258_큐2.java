@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 백준_18258_큐2 {
+public class BJ_18258_큐2 {
     static BufferedReader bf =new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder sb = new StringBuilder();
     static StringBuilder ans = new StringBuilder();
