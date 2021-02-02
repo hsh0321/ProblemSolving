@@ -14,7 +14,7 @@ public class 백준_18258_큐2 {
     static StringBuilder ans = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        int N = Integer.parseInt(bf.readLine()); // 1 ~ 2백만
+        int N = Integer.parseInt(bf.readLine()); // 1 ~ 2백만1
 
         Deque<Integer> q = new LinkedList<>();
         for(int i=0;i<N;i++){
