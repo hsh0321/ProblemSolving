@@ -7,10 +7,11 @@ import java.util.Stack;
 public class BJ_2504_괄호의값 {
 
     public static Stack<Character> stack=new Stack<Character>();
+
     public static void main(String[] args) throws Exception{
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         String s=br.readLine();
-        boolean f=false;
+        boolean f = false;
         long ans=0;
         int mul=1;
 
@@ -29,7 +30,7 @@ public class BJ_2504_괄호의값 {
             }
             if(s.charAt(i)==')') {
                 if(stack.empty() || stack.peek()!='(') {
-                    f=true;
+                    f =true;
                     break;
                 }if(s.charAt(i-1)=='(')
                     ans+=mul;
@@ -38,7 +39,7 @@ public class BJ_2504_괄호의값 {
 
             }else if(s.charAt(i)==']') {
                 if(stack.empty() || stack.peek()!='[') {
-                    f=true;
+                    f =true;
                     break;
                 }
                 if(s.charAt(i-1)=='[')
@@ -47,7 +48,7 @@ public class BJ_2504_괄호의값 {
                 mul/=3;
             }
         }
-        if(f==true || !stack.empty()) {
+        if(f ==true || !stack.empty()) {
             System.out.println(0);
         }else {
             System.out.println(ans);
