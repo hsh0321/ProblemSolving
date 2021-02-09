@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.N과M_순열조합;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

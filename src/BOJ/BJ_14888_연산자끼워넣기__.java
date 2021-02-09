@@ -1,68 +1,51 @@
 package BOJ;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
-public class BJ_14888_연산자끼워넣기 {
-
-    static int[] arr;
-    static int max = Integer.MIN_VALUE,min = Integer.MAX_VALUE;
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        arr = new int[N];
-
-        for(int i=0;i<N;i++){
-            arr[i] = sc.nextInt();
-        }
-
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int i=0;i<4;i++){
-            int tmp = sc.nextInt();
-            for(int j=0;j<tmp;j++){
-                list.add(i);
-            }
-        }
-        int[] output = new int[list.size()];
-        boolean[] visited = new boolean[list.size()];
-
-        perm(list, output, visited, 0, list.size(),list.size());
-
-        System.out.print(max + "\n" + min);
+public class BJ_14888_연산자끼워넣기__ {
+    static int min = Integer.MAX_VALUE;
+    static int max = Integer.MIN_VALUE;
+    static int N;
+    static int[] A;
+    static int[] op = new int[4];
+    public static void main(String[] args) throws Exception{
+        // System.setIn(new FileInputStream("src/com/company/test.txt"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = parse(br.readLine());
+        A = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());;
+        for(int i=0; i<N; i++) A[i] = parse(st.nextToken());
+        st = new StringTokenizer(br.readLine());
+        for(int i=0; i<4; i++) op[i] = parse(st.nextToken());
+        dfs(1, A[0]);
+        System.out.print(max + "\n" +min);
     }
-
-    static void perm(ArrayList<Integer> list, int[] output, boolean[] visited, int depth, int n, int r) {
-        if (depth == r) {
-            int answer = arr[0];
-            for(int i=0;i<r;i++) {
-                switch (output[i]){
-                    case 0: // +
-                        answer += arr[i+1];
-                        break;
-                    case 1: // -
-                        answer -= arr[i+1];
-                        break;
-                    case 2: // *
-                        answer *= arr[i+1];
-                        break;
-                    case 3: // /
-                        answer /= arr[i+1];
-                        break;
-                }
-            }
-            max = Math.max(answer,max);
-            min = Math.min(answer,min);
+    static void dfs(int idx, int sum){
+        if(idx == N) {
+            min = Math.min(min, sum);
+            max = Math.max(max, sum);
             return;
         }
-
-        for (int i=0; i<n; i++) {
-            if (visited[i] != true) {
-                visited[i] = true;
-                output[depth] = list.get(i);
-                perm(list, output, visited, depth + 1, n, r);
-                visited[i] = false;;
+        for(int i=0; i<4; i++){
+            if(op[i] == 0) continue;
+            op[i]--;
+            switch (i){
+                case 0:
+                    dfs(idx+1, sum+A[idx]);
+                    break;
+                case 1:
+                    dfs(idx+1, sum-A[idx]);
+                    break;
+                case 2:
+                    dfs(idx+1, sum*A[idx]);
+                    break;
+                case 3:
+                    dfs(idx+1, sum/A[idx]);
+                    break;
             }
+            op[i]++;
         }
     }
+    static int parse(String s) { return Integer.parseInt(s); }
 }
