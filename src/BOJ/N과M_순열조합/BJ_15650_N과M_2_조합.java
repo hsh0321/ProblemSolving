@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BJ_15650_N과M_2_순열 {
+public class BJ_15650_N과M_2_조합 {
     public static int N;	// 정적변수로 변경
     public static int M;	// 정적변수로 변경
     public static int[] arr;
