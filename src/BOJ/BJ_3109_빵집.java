@@ -1,9 +1,11 @@
+package BOJ;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class BJ_3109_빵집 {
 
     static int R, C, ans;
     static char map[][];
