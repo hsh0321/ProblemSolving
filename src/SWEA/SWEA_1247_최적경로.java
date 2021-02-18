@@ -1,19 +1,12 @@
+package SWEA;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-class Point {
-    int x;
-    int y;
 
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
-public class Main {
+public class SWEA_1247_최적경로 {
 
     static int N, compX, compY, houseX, houseY, min = 1000;
     static Point[] customer = new Point[10];
@@ -28,7 +21,7 @@ public class Main {
             answer.append("#").append(t).append(" ");
             min = 1000;
             N = Integer.parseInt(in.readLine());
-            st = new StringTokenizer(in.readLine(), " ");
+            st = new StringTokenizer(in.readLine());
             compX = Integer.parseInt(st.nextToken());
             compY = Integer.parseInt(st.nextToken());
             houseX = Integer.parseInt(st.nextToken());
@@ -64,4 +57,15 @@ public class Main {
             }
         }
     }
+
+    static class Point {
+        int x;
+        int y;
+
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
 }
