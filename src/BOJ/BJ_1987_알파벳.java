@@ -31,20 +31,18 @@ public class BJ_1987_알파벳 {
         }
         alphabet[map[0][0]-'A'] = true;
         dfs(0,0,0);
+
         System.out.println(ans+1);
     }
-
+    
     public static void dfs(int depth, int x, int y){
         for(int i=0;i<4;i++){
             int nxtX = x + dx[i];
             int nxtY = y + dy[i];
             if(nxtX >= C || nxtX < 0 || nxtY >= R || nxtY < 0)continue;
-            if(visit[nxtY][nxtX])continue;
             if(alphabet[map[nxtY][nxtX]-'A'])continue;
-            visit[nxtY][nxtX] = true;
             alphabet[map[nxtY][nxtX]-'A'] = true;
             dfs(depth+1,nxtX,nxtY);
-            visit[nxtY][nxtX] = false;
             alphabet[map[nxtY][nxtX]-'A'] = false;
         }
         ans = Math.max(depth,ans);
