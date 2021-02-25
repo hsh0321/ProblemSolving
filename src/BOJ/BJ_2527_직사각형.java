@@ -28,7 +28,7 @@ public class BJ_2527_직사각형 {
 
             int sumW = Math.max(rx,rx2) - Math.min(lx,lx2);
             int sumH = Math.max(ry,ry2) - Math.min(ly,ly2);
-
+            // 두개의 사각형을 포함하는 사각형의 가로 세로
             if(w + w2 > sumW && h + h2 > sumH){
                 System.out.println('a');
             }
