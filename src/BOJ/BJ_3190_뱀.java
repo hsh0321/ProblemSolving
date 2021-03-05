@@ -51,9 +51,7 @@ public class BJ_3190_뱀 {
             nxt = next(nxt,dir);
             if(nxt.x > N || nxt.y > N || nxt.x <= 0 || nxt.y <= 0)break; // 맵밖
             if(map[nxt.y][nxt.x] == 1)break; // 자기 몸과 부딪힘
-
             snake.addFirst(new Point(nxt.x,nxt.y)); // 몸이 늘어남
-
             if(map[nxt.y][nxt.x] == 0){ // 사과가 아닐 때
                 Point tail = snake.pollLast(); // 꼬리부분 없앰
                 map[tail.y][tail.x] = 0;
@@ -68,14 +66,14 @@ public class BJ_3190_뱀 {
         System.out.println(time);
     }
 
-    static Point next(Point cur,int dir){
+    static Point next(Point cur,int dir){ // 다음 위치
         Point nxt = new Point(cur.x,cur.y);
         nxt.x += d[dir][0];
         nxt.y += d[dir][1];
         return nxt;
     }
 
-    static int changeDir(int i,char dir){
+    static int changeDir(int i,char dir){ // 방향 바꾸기
         int newDir=i;
         switch (i){
             case 0:

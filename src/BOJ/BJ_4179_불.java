@@ -26,7 +26,6 @@ public class BJ_4179_불 {
         map = new char[R][C];
         visit = new boolean[R][C];
         Point src = new Point();
-
         for(int i=0;i<R;i++){
             String s = bf.readLine();
             for(int j=0;j<C;j++){
