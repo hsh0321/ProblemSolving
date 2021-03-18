@@ -44,7 +44,9 @@ public class BJ_16236_아기상어 {
             q.offer(shark.loc);
             int dist = 0;
             visit[shark.loc.y][shark.loc.x] = 1; // 초기 값
-            while (true) {
+
+            // 물고기 탐색
+            while (true) { // 물고기 탐색
                 int size = q.size();
                 if(q.size() == 0){
                     flag = true;
@@ -59,7 +61,7 @@ public class BJ_16236_아기상어 {
                     }
                 });
 
-                // 물고기 탐색
+
                 while (size-- != 0) {
                     Point cur = q.poll();
                     for (int i = 0; i < 4; i++) {

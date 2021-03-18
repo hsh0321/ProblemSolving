@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-public class Solution {
+public class Test_전원연결 {
     static int[][] map;
     static int N;
     static ArrayList<Point> list = new ArrayList<>();
@@ -30,7 +30,15 @@ public class Solution {
                     }
                 }
             }
-
+            for(int i=0;i<list.size();i++){
+                int cnt =0;
+                for(int j=0;j<4;j++){
+                    if(!check(list.get(i),j)){
+                        cnt++;
+                    }
+                }
+                if(cnt==4)list.remove(i);
+            }
             dfs(0,0);
             //System.out.println(answer);
             sb.append('#').append(t).append(' ').append(answer).append('\n');
@@ -47,8 +55,7 @@ public class Solution {
         int l = 0;
         for(int i=0;i<4;i++){
             if(!check(list.get(depth),i))continue;
-            l = draw(list.get(depth),i);
-            //print();
+            draw(list.get(depth),i);
             dfs(depth+1,len + l);
             erase(list.get(depth),i);
         }
@@ -87,16 +94,6 @@ public class Solution {
             if(nxt.x >= N || nxt.x < 0 || nxt.y >= N || nxt.y < 0)break;
             map[nxt.y][nxt.x] = 0;
         }
-    }
-
-    static void print(){
-        for(int i=0;i<N;i++){
-            for(int j=0;j<N;j++){
-                System.out.print(map[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println();
     }
 
     static class Point{
