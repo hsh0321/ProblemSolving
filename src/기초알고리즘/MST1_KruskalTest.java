@@ -6,22 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-/*
-5 10
-0 1 5
-0 2 10
-0 3 8
-0 4 7
-1 2 5
-1 3 3
-1 4 6
-2 3 1
-2 4 3
-3 4 1
 
-output==>10
-
-*/
 
 public class MST1_KruskalTest {
 
@@ -102,9 +87,22 @@ public class MST1_KruskalTest {
 
 }
 
+/*
+5 10
+0 1 5
+0 2 10
+0 3 8
+0 4 7
+1 2 5
+1 3 3
+1 4 6
+2 3 1
+2 4 3
+3 4 1
 
+output==>10
 
-
+*/
 
 
 

@@ -1,4 +1,4 @@
-package com.ssafy.string;
+package 기초알고리즘;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
