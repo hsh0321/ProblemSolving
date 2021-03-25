@@ -18,3 +18,8 @@ public class BJ_1463_1로만들기 {
         System.out.println(dp[N]);
     }
 }
+
+// 2 - 1
+// 3 - 1 + 1 // 3 - 1
+// 3 - 1  6 - 2
+

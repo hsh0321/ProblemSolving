@@ -11,7 +11,6 @@ import java.util.StringTokenizer;
 public class BJ_2636_치즈 {
     static int R,C;
     static int[][] map;
-    static int[][] visit;
 
     static int[] dx = {1,-1,0,0},dy = {0,0,1,-1};
     public static void main(String[] args) throws IOException {
@@ -27,9 +26,11 @@ public class BJ_2636_치즈 {
                 map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        bfs(new Point(0,0)); // 치즈 밖 공간 찾기
+
+        bfs(new Point(0,0)); // 치즈 밖 공간 찾기 : 9
         int cheeseNum = 0;
         int time = 0;
+
         while(true){
             time++;
             print();
@@ -45,7 +46,7 @@ public class BJ_2636_치즈 {
     }
 
     static int eraseCheese(){
-        Queue<Point> q = new LinkedList<>();
+        Queue<Point> q = new LinkedList<>(); // 없어질 치즈
         // 지울거 저장
         for(int i=0;i<R;i++){
             for(int j=0;j<C;j++){
@@ -64,8 +65,6 @@ public class BJ_2636_치즈 {
         while(!q.isEmpty()){
             Point cur = q.poll();
             bfs(cur); // 치즈 밖 공간 찾기
-            //map[cur.y][cur.x] = 9;
-
         }
 
         return num;
