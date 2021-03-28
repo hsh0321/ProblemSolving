@@ -36,7 +36,6 @@ public class MST1_KruskalTest {
 	
 	static int findSet(int a) {
 		if(parents[a]==a) return a;
-//		return findSet(parents[a]); // path compression 전 
 		return parents[a] = findSet(parents[a]); // path compression 후 
 	}
 	
