@@ -52,11 +52,11 @@ public class MST1_KruskalTest {
 		
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(in.readLine()," ");
-		V = Integer.parseInt(st.nextToken());
-		E = Integer.parseInt(st.nextToken());
+		V = Integer.parseInt(st.nextToken()); // 노드 개수
+		E = Integer.parseInt(st.nextToken()); // 간선 개수
 		
-		parents = new int[V];
-		edgeList = new Edge[E];
+		parents = new int[V]; // disjoint set
+		edgeList = new Edge[E]; // 간선 리스트
 		
 		for (int i = 0; i < E; i++) {
 			st = new StringTokenizer(in.readLine()," ");

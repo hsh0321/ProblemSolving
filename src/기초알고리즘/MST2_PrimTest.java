@@ -7,12 +7,11 @@ import java.util.StringTokenizer;
 
 
 public class MST2_PrimTest {
-
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(in.readLine());
-		int[][] adjMatrix = new int[N][N];
-		boolean[] visited = new boolean[N];
+		int[][] adjMatrix = new int[N][N]; // 거리 정보 저장
+		boolean[] visited = new boolean[N]; // 방문 체크
 		int[] minEdge = new int[N];
 		
 		StringTokenizer st = null;
@@ -28,7 +27,6 @@ public class MST2_PrimTest {
 		minEdge[0] = 0;
 		
 		for (int c = 0; c < N; c++) {
-			
 			int min = Integer.MAX_VALUE;
 			int minVertex = 0;
 			// 신장트리에 연결되지 않은 정점중 minEdge비용이 최소인 정점
@@ -50,7 +48,6 @@ public class MST2_PrimTest {
 			
 		}
 		System.out.println(result);
-		
 	}
 
 }

@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * @author taeheekim
  */
-public class DijkstraTest {
+public class Dijkstra_Array {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 

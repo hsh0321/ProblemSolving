@@ -24,7 +24,6 @@ public class MST3_Prim_PQ {
     static int V,E, ans = 0, cnt = 0;
     static ArrayList<ArrayList<Edge>> graph;
     static boolean[] visit;
-    static char[] gender;
     static PriorityQueue<Edge> pq;
 
     public static void main(String[] args) throws Exception {
