@@ -1,3 +1,5 @@
+package ETC;
+
 import java.util.*;
 import java.io.*;
 public class Test_전원연결 {

@@ -31,6 +31,8 @@ public class DP1_KnapsackTest {
 		}
 		System.out.println(D[N][W]);
 	}
+
+	
 }
 
 /*
