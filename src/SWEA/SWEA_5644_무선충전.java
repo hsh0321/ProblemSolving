@@ -53,14 +53,11 @@ public class SWEA_5644_무선충전 {
                         sum = Math.max(sum,tmp);
                     }
                 }
-                //System.out.println(sum);
                 allSum += sum;
-//                if(!map[loc[i][0].r][loc[i][0].c].isEmpty())tmp1 = map[loc[i][0].r][loc[i][0].c].get(0);
-//                if(!map[loc[i][1].r][loc[i][1].c].isEmpty())tmp2 = map[loc[i][1].r][loc[i][1].c].get(0);
-//                System.out.println(tmp1 + "," + tmp2);
             }
-            System.out.println("#" + t + " " + allSum);
+            sb.append("#").append(t).append(" ").append(allSum).append('\n');
         }
+        System.out.println(sb);
     }
 
     static void input() throws IOException {
