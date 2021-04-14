@@ -30,7 +30,7 @@ public class SWEA_1249_보급로 {
         for (int testCase = 1; testCase <= T; testCase++) {
             N = Integer.parseInt(bf.readLine());
 
-            map = new char[N][];
+            map = new char[N][N];
             for (int r = 0; r < N; r++) {
                 map[r] = bf.readLine().toCharArray();
             }

@@ -3,6 +3,7 @@ package BOJ;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -45,6 +46,14 @@ public class BJ_7576_토마토 {
 
                 q.offer(nxt);
             }
+
+            for(int i=0;i<M;i++){
+                for(int j=0;j<N;j++){
+                    System.out.print(map[i][j] + " ");
+                }
+                System.out.println();
+            }
+            System.out.println();
         }
         if(num==0){ // 모두 익음
             System.out.println(answer-1); // 1부터 시작했으므로 -1해줘야함
